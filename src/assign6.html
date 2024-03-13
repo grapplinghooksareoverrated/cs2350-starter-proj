@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            font-family: "PT Sans Narrow", sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        header {
+            width: 100%;
+            height: 40px;
+            background-color: white;
+        }
+
+        header ul {
+            padding: 0; 
+            list-style-type: none;
+            display: inline; 
+        }
+
+        header > ul:nth-child(2) li {
+            float: right;  
+        }
+
+        header ul li {
+            line-height: 35px;
+            display: inline;
+            padding: 0 10px;
+        }
+
+        header a {
+            text-decoration: none;
+        }
+
+        .special-link {
+            padding: 0.25rem 0;
+            border-block-end: 2px solid blue;
+        }
+
+        main {
+            height: calc(100vh - 40px - 80px);
+            background-color: rgb(214, 244, 255);
+        }
+
+        .shell {
+            width: 85%;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .shell>div {
+            flex: 1;
+            margin: 1rem;
+        }
+
+        .shell>.left {
+            flex: 1;
+            padding: 2rem;
+            background-color: white;
+            border: 1px solid lightgray;
+            border-radius: 25px;
+        }
+
+        .shell>.left>ul {
+            list-style-type: none;
+        }
+
+        .shell>.left>ul>li>a {
+            text-decoration: none;
+        }
+
+        .shell>.right {
+            flex: 3;
+            padding: 2rem;
+            background-color: white;
+            border: 1px solid lightgray;
+            border-radius: 25px;
+        }
+
+        .shell>.right>h2 {
+            font-size: 2rem;
+            margin-bottom: 0;
+        }
+
+        .shell>.right>form {
+            width: 100%;
+            height: 100%;
+            line-height: 2.5rem;
+        }
+
+        .shell>.right>hr {
+            border-color: blue;
+        }
+
+        .shell>.right>form>label {
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+
+        .shell>.right>form>input[type="text"], .shell>.right>form>input[type="email"] {
+            width: 98%;
+            padding: 1%;
+        }
+
+        .shell>.right>form>input[type="submit"], .shell>.right>form>input[type="reset"] {
+            margin: 0 0.3rem;
+            padding: 0.5rem 1.2rem;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            border: none;
+        } 
+
+        .shell>.right>form>input[type="submit"] {
+            background-color: blue;
+            color: white; 
+        }
+
+        footer {
+            width: 100%;
+            height: 80px;
+            background-color: black;
+            color: rgb(214, 244, 255);
+            line-height: 110px;
+            text-align: center; 
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <ul>
+            <li>Porter W. Ballou</li>
+            <li><a href="link-1.html">Home</a></li>
+            <li><a href="link-2.html">Products</a></li>
+            <li><a href="link-3.html">Services</a></li>
+            <li><a href="link-4.html" class="special-link">Contact Us</a></li>
+        </ul>
+
+        <ul>
+            <li><a href="link-1.html">Sign up</a></li>
+            <li><a href="link-2.html">Sign in</a></li>
+        </ul>
+
+    </header>
+
+    <main>
+        <div class="shell">
+            <div class="left">
+
+                <h2>Main menu</h2>
+                <ul>
+                    <li><a href="link-1.html">Home</a></li>
+                    <li><a href="link-1.html">Products</a></li>
+                    <li><a href="link-1.html">Services</a></li>
+                    <li><a href="link-1.html">About us</a></li>
+                </ul>
+
+                <h2>Featured Projects</h2>
+                <ul>
+                    <li><a href="link-1.html">Project A</a></li>
+                    <li><a href="link-1.html">Project B</a></li>
+                    <li><a href="link-1.html">Project C</a></li>
+                    <li><a href="link-1.html">Project D</a></li>
+                    <li><a href="link-1.html">Project E</a></li>
+                    <li><a href="link-1.html">Project F</a></li>
+                    <li><a href="link-1.html">Project G</a></li>
+                </ul>
+
+            </div>
+
+            <div class="right">
+
+                <h2>Contact Us Form</h2>
+
+                <hr>
+
+                <form action="">
+                    <label for="name">Name</label><br>
+                    <input type="text" id="name" value="Type name here"><br>
+
+                    <label for="username">Username</label><br>
+                    <input type="text" id="username" value="Text input"><br>
+
+                    <label for="membership">Are you a member?</label><br>
+                    <input type="radio" id="mem_yes" name="membership" value="mem_yes">
+                    <label for="mem_yes">Yes</label>
+                    <input type="radio" id="mem_no" name="membership" value="mem_no">
+                    <label for="mem_no">No</label><br>
+
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" pattern=".+@example\.com" value="Email input"><br>
+
+                    <label for="message">Message</label><br>
+                    <input type="text" id="message" value="Textarea"><br>
+
+                    <input type="checkbox" id="tnc" value="tnc">
+                    <label for="tnc">I agree to the <a href="/termsandconditions.html">terms and conditions</a></label><br>
+
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Cancel">
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2024 - CS 2350 - All rights reserved
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      font-family: Arial, Helvetica, sans-serif;
+      box-sizing: border-box;
+    }
+
+    * {
+      box-sizing: inherit; 
+    }
+
+    body {
+      margin: 0;
+      scrollbar-width: none; 
+      -ms-overflow-style: none; 
+    }
+
+    body::-webkit-scrollbar {
+      display: none; 
+    }
+
+    .shell {
+      height: 100vh; 
+    }
+
+    header {
+      height: 100px;
+      line-height: 100px; 
+      background-color: darkgray; 
+      font-size: 2rem; 
+      text-indent: 1rem; 
+    }
+
+    main {
+      display: flex; 
+      flex-flow: rows nowrap;
+    }
+
+    article {
+      flex: 2; 
+      background-color: yellowgreen;
+    }
+
+    article .boxes {
+      display: flex; 
+      flex-flow: column wrap; 
+    }
+
+    article .boxes .box {
+      height: 100px;
+      line-height: 100px; 
+      margin: 1rem 1rem; 
+      background-color: blue;
+      color: white;
+      text-align: center; 
+    }
+
+    #featured {
+      border: 3px solid white; 
+      background-color: black; 
+    }
+
+    #selected {
+      background-color:rgb(204, 229, 240);
+      color: blue; 
+    }
+
+    aside {
+      display: none; 
+    }
+
+    footer {
+      width: 100%; 
+      height: 80px; 
+      line-height: 80px;
+      background-color: darkgray;
+      font-size: 1.5rem; 
+      text-align: center;
+    }
+
+    @media all and (min-width: 600px) {
+      main {
+        height: calc(100vh - 100px);
+      }
+      article .boxes {
+        flex-flow: row wrap; 
+      }
+      article .boxes .box {
+        margin: 1rem 0 1rem 1rem; 
+        width: calc((100% - 3rem)/2)
+      }
+    }
+
+    @media all and (min-width: 800px) {
+      main {
+        height: calc(100vh - 100px);
+      }
+      article .boxes .box {
+        width: calc((100% - 4rem) / 3)
+      }
+
+      aside {
+        display: block; 
+        flex-flow: column wrap;
+        flex: 1;  
+        overflow: hidden;
+        background-color: rgb(204, 229, 240);
+      }
+
+      aside .boxes {
+        width: 100%; 
+        display: flex; 
+        flex-flow: row wrap;
+      }
+
+      aside .boxes .box {
+        height: 100px;
+        line-height: 100px; 
+        margin: 1rem 0 1rem 1rem; 
+        width: calc((100% - 3rem) / 2);
+        background-color: blue;
+        color: white;   
+        text-align: center;
+      }
+
+      .links {
+        margin: 0; 
+        padding: 1rem; 
+      }
+
+      .links li {
+        list-style-type: none; 
+        margin: 0 0 0.5rem 0; 
+        padding: 1rem 1rem;  
+        width: 100%; 
+        background-color: darkgray;
+        text-align: center;  
+      }
+
+      .links a {
+        text-decoration: none; 
+        color: white;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="shell">
+
+    <header>
+      Header
+    </header>
+
+    <main>
+
+      <article>
+        <div class="boxes">
+          <div class="box" id="featured">Featured</div>
+          <div class="box">Box 2</div>
+          <div class="box">Box 3</div>
+          <div class="box">Box 4</div>
+          <div class="box">Box 5</div>
+          <div class="box" id="selected">Selected</div>
+          <div class="box">Box 7</div>
+          <div class="box">Box 8</div>
+          <div class="box">Box 9</div>
+        </div>
+      </article>
+
+      <aside>
+        <div class="boxes">
+          <div class="box">Box 1</div>
+          <div class="box">Box 2</div>
+          <div class="box">Box 3</div>
+          <div class="box">Box 4</div>
+          <div class="box">Box 5</div>
+          <div class="box">Box 6</div>
+        </div>
+        <ul class="links">
+          <li><a href="#Link_1">Link 1</a></li>
+          <li><a href="#Link_2">Link 2</a></li>
+          <li><a href="#Link_3">Link 3</a></li>
+          <li><a href="#Link_4">Link 4</a></li>
+          <li><a href="#Link_5">Link 5</a></li>
+        </ul>
+      </aside>
+
+    </main>
+
+    <footer>
+      &copy; All rights reserved
+    </footer>
+
+  </div>
+
+
+</body>
+</html>
